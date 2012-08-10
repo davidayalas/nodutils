@@ -126,7 +126,7 @@ SAMPLES
 
 -	Caching twitter request due to twitter api limits 
 
-		var utils = require("./node-utils.js");
+		var utils = require("./node-utils");
 		var twitterquery = "davidayalas";
 		var twitterurl = "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=";
 
