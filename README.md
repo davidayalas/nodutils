@@ -126,20 +126,20 @@ SAMPLES
 
 -	Caching twitter request due to twitter api limits 
 
-``var utils = require("./node-utils.js");
-var twitterquery = "davidayalas";
-var twitterkey = twitterquery.replace(":","_");
-var twitterurl = "http://api.twitter.com/1/statuses/user_timeline.json?screen_name="
+		var utils = require("./node-utils.js");
+		var twitterquery = "davidayalas";
+		var twitterkey = twitterquery.replace(":","_");
+		var twitterurl = "http://api.twitter.com/1/statuses/user_timeline.json?screen_name="
 
-utils.cache.setPath("/apps/myapp/cache",function(){
-	utils.cache.get(twitterkey, function(content){
-		if(!content){
-			utils.url.get(twitterurl+twitterkey,function(result){
-				utils.cache.set(twitterkey,result,300);
-				console.log(result);
+		utils.cache.setPath("/apps/myapp/cache",function(){
+			utils.cache.get(twitterkey, function(content){
+				if(!content){
+					utils.url.get(twitterurl+twitterkey,function(result){
+						utils.cache.set(twitterkey,result,300);
+						console.log(result);
+					});
+				}else{
+					console.log(content);
+				}
 			});
-		}else{
-			console.log(content);
-		}
-	});
-});``
+		});
