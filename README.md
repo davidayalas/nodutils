@@ -7,16 +7,23 @@ String
 -------
 
 -	utils.string.trim(str) or String.trim()
+
 -	utils.string.ltrim(str) or String.trim()
+
 -	utils.string.rtrim(str) or String.trim()
+
 -	utils.string.dropAccents(str) or String.dropAccents()
+
 -	utils.string.isNumber(str) or String.isNumber()
+
 -	utils.string.stripHtml(str) or String.stripHtml()
+
 -	utils.string.count(str,substr,flags) or String.count(substr,flags). 
 
 	It counts the number of ocurrences of substr. Flags can be "i" (ignore case) and/or "d" (drop accents)
 
 -	utils.string.reverse(str) or String.reverse()
+
 -	utils.string.toHtml(str) or String.toHtml() 
 
 	Converts diacritics and almost all chars into html entities
@@ -95,7 +102,7 @@ Cache
 
 -	utils.cache.getPath() 
 
-	Get the current cache dir (default is "./cache" in absolute)
+	Get the current cache dir (default is "./cache")
 
 -	utils.cache.setPath(path,callback)
 
