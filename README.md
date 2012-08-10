@@ -130,15 +130,13 @@ SAMPLES
 		var twitterquery = "davidayalas";
 		var twitterurl = "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=";
 
-		utils.cache.setPath("/apps/myapp/cache",function(){
-			utils.cache.get(twitterquery, function(content){
-				if(!content){
-					utils.url.get(twitterurl+twitterquery,function(result){
-						utils.cache.set(twitterquery,result,300);
-						console.log(result);
-					});
-				}else{
-					console.log(content);
-				}
-			});
+		utils.cache.get(twitterquery, function(content){
+			if(!content){
+				utils.url.get(twitterurl+twitterquery,function(result){
+					utils.cache.set(twitterquery,result,300);
+					console.log(result);
+				});
+			}else{
+				console.log(content);
+			}
 		});
