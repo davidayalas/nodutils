@@ -20,56 +20,55 @@ String
 
 -	utils.string.**count**(str,substr,flags) or String.**count**(substr,flags). 
 
-	+	It counts the number of ocurrences of substr. Flags can be "i" (ignore case) and/or "d" (drop accents).<br /><br />                                                                           
+	+	It counts the number of ocurrences of substr. Flags can be "i" (ignore case) and/or "d" (drop accents).<br />                                                                           
 -	utils.string.**reverse**(str) or String.**reverse**()
 
 -	utils.string.**toHtml**(str) or String.**toHtml**() 
 
-	+	Converts diacritics and almost all chars into html entities.<br /><br />
+	+	Converts diacritics and almost all chars into html entities.<br />
 
 -	utils.string.**fromHtml**(str) or String.**fromHtml**() 
 
-	+	Converts into diacritics html encoded entities.<br /><br />
+	+	Converts into diacritics html encoded entities.
 
 Numeric
 --------
 
 -	utils.number.**stoi**(str) or String.**stoi**()
 
-	+	Converts to integer.  
+	+	Converts to integer<br />
 
 -	utils.number.**stof**(str,decimals) or String.**stof**(decimals)
 
-	+	Converts to float, with number of decimals.  
+	+	Converts to float, with number of decimals<br />  
 
 -	utils.number.**round**(num,decimals) or Number.**round**(decimals)
 
-	+	Rounds number to the given number of decimals.  
+	+	Rounds number to the given number of decimals  
 
 Date
 -----
 
 -	utils.date.**diff**(date1,date2,unit) 
 
-	+	Unit = "d": days,"h": hours,"m": minutes,"s": seconds. Default unit is millis.  
+	+	Unit = "d": days,"h": hours,"m": minutes,"s": seconds. Default unit is millis
 
 File
 -----
 
 -	utils.file.**write**(file,data,options,callback) 
 
-	+	options = "w" write or "a" append.  
+	+	options = "w" write or "a" append<br />
 
 -	utils.file.**read**(file,encoding,callback) 
 
-	+	encoding is optional.  
+	+	encoding is optional<br />
 
 -	utils.file.**exists**(file,callback) 
 
 -	utils.file.**getModTime**(file,callback)
 
-	+	Date object is given to the callback as an argument.  
-
+	+	Date object is given to the callback as an argument<br />
 
 -	utils.file.**remove**(file,callback)
 
@@ -82,7 +81,7 @@ URL
 
 -	utils.url.**post**(url, options, callback) 
 
-	*	Support for **http** and **https**. 
+	*	Support for **http** and **https**
 	*	Support for **proxy requests** (in url. E.g: "url"=http://www.proxy.com:8080/www.urltobeproxied.com)
 	*	It is possible to set only url or options, but options need to set host, path, ...
 	*	Options is an object with some props:
@@ -103,23 +102,23 @@ Cache
 
 -	utils.cache.**getPath**() 
 
-	+	Get the current cache dir (default is "./cache").  
+	+	Get the current cache dir (default is "./cache")<br />
 
 -	utils.cache.**setPath**(path,callback)
 
-	+	Set the cache dir (and create if it doesn't exists)  
+	+	Set the cache dir (and create if it doesn't exists)
 	
-	+	It's recommended to use absolute paths ("/apps/myapp/cache")    
+	+	It's recommended to use absolute paths ("/apps/myapp/cache")<br />
 
 -	utils.cache.**setOptions**({path : "/mypath", size : 1}}, callback)
 
 	+	Set the cache dir (and create if it doesn't exists) and cache max size
 	
-	+	Cache size is in MB  
+	+	Cache size is in MB<br />
 
 -	utils.cache.**set**(key, data, expiretime, callback) 
 
-	+	Expiretime is in seconds. It is optional.  
+	+	Expiretime is in seconds. It is optional<br />
 
 -	utils.cache.**get**(key, callback)
 
