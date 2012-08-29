@@ -36,11 +36,11 @@ Numeric
 
 -	utils.number.**stoi**(str) or String.**stoi**()
 
-	+	Converts to integer<br />
+	+	Converts to integer  
 
 -	utils.number.**stof**(str,decimals) or String.**stof**(decimals)
 
-	+	Converts to float, with number of decimals<br />  
+	+	Converts to float, with number of decimals  
 
 -	utils.number.**round**(num,decimals) or Number.**round**(decimals)
 
