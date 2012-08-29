@@ -51,7 +51,7 @@ Date
 
 -	utils.date.**diff**(date1,date2,unit) 
 
-	+	Unit = "d": days,"h": hours,"m": minutes,"s": seconds. Default unit is millis<br />  
+	+	Unit = "d": days,"h": hours,"m": minutes,"s": seconds. Default unit is millis
 
 File
 -----
