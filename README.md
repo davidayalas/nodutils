@@ -21,12 +21,14 @@ String
 -	utils.string.**count**(str,substr,flags) or String.**count**(substr,flags). 
 
 	+	It counts the number of ocurrences of substr. Flags can be "i" (ignore case) and/or "d" (drop accents)
+	
 
 -	utils.string.**reverse**(str) or String.**reverse**()
 
 -	utils.string.**toHtml**(str) or String.**toHtml**() 
 
 	+	Converts diacritics and almost all chars into html entities
+
 
 -	utils.string.**fromHtml**(str) or String.**fromHtml**() 
 
@@ -40,9 +42,11 @@ Numeric
 
 	+	Converts to integer
 
+
 -	utils.number.**stof**(str,decimals) or String.**stof**(decimals)
 
 	+	Converts to float, with number of decimals
+
 
 -	utils.number.**round**(num,decimals) or Number.**round**(decimals)
 
@@ -62,15 +66,18 @@ File
 
 	+	options = "w" write or "a" append
 
+
 -	utils.file.**read**(file,encoding,callback) 
 
 	+	encoding is optional
+
 
 -	utils.file.**exists**(file,callback) 
 
 -	utils.file.**getModTime**(file,callback)
 
 	+	Date object is given to the callback as an argument
+
 
 -	utils.file.**remove**(file,callback)
 
@@ -106,19 +113,29 @@ Cache
 
 	+	Get the current cache dir (default is "./cache")
 
+
 -	utils.cache.**setPath**(path,callback)
 
 	+	Set the cache dir (and create if it doesn't exists)
 	
 	+	It's recommended to use absolute paths ("/apps/myapp/cache")
 
+
+-	utils.cache.**setOptions**({path : "/mypath", size : 1}}, callback)
+
+	+	Set the cache dir (and create if it doesn't exists) and cache max size 
+	
+	+	Cache size is in MB
+
+
 -	utils.cache.**set**(key, data, expiretime, callback) 
 
 	+	Expiretime is in seconds. It is optional.
 
+
 -	utils.cache.**get**(key, callback)
 
--	utils.cache.**delete**(key, callback)
+-	utils.cache.**remove**(key, callback)
 
 
 SAMPLES
