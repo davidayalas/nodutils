@@ -20,17 +20,16 @@ String
 
 -	utils.string.**count**(str,substr,flags) or String.**count**(substr,flags). 
 
-	+	It counts the number of ocurrences of substr. Flags can be "i" (ignore case) and/or "d" (drop accents).  
-
+	+	It counts the number of ocurrences of substr. Flags can be "i" (ignore case) and/or "d" (drop accents).<br /><br />                                                                           
 -	utils.string.**reverse**(str) or String.**reverse**()
 
 -	utils.string.**toHtml**(str) or String.**toHtml**() 
 
-	+	Converts diacritics and almost all chars into html entities.  
+	+	Converts diacritics and almost all chars into html entities.<br /><br />
 
 -	utils.string.**fromHtml**(str) or String.**fromHtml**() 
 
-	+	Converts into diacritics html encoded entities.  
+	+	Converts into diacritics html encoded entities.<br /><br />
 
 Numeric
 --------
