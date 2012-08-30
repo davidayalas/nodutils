@@ -14,13 +14,13 @@ String
 
 -	utils.string.**dropDiacritics**(str) or String.**dropDiacritics**()
 
-	+	Converts accents, diacritics into a plain letter<br /> 
-
+	+	Converts accents, diacritics into a plain letter<br />  
+	
 -	utils.string.**isNumber**(str) or String.**isNumber**()
 
 -	utils.string.**stripHtml**(str) or String.**stripHtml**()
 
-	+	Strip all html tags and leaves only text<br /> 
+	+	Strip all html tags and leaves only text<br />  
 
 -	utils.string.**count**(str,substr,flags) or String.**count**(substr,flags). 
 
@@ -30,7 +30,7 @@ String
 -	utils.string.**toHtml**(str) or String.**toHtml**() 
 
 	+	Converts diacritics and almost all chars into html entities<br />  
-	
+
 -	utils.string.**fromHtml**(str) or String.**fromHtml**() 
 
 	+	Converts into diacritics html encoded entities
