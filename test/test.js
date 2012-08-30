@@ -7,6 +7,7 @@ console.log("string '" + str + "'");
 console.log("\r\r>> is '" + utils.string.trim(str) + "' with utils.string.trim('" + str + "')");
 console.log("\r\r>> is '" + utils.string.ltrim(str) + "' with utils.string.ltrim('" + str + "')");
 console.log("\r\r>> is '" + utils.string.rtrim(str) + "' with utils.string.rtrim('" + str + "')");
+console.log("\r\r>> is '" + utils.string.dropDiacritics(str) + "' with utils.string.dropDiacritics('" + str + "')");
 
 console.log("\r\r>> contains string 'a' " + utils.string.count(str,"a") + " times with utils.string.count('"+str+"','a')");
 console.log("\r\r>> contains string 'a' " + utils.string.count(str,"a","i") + " times with utils.string.count('"+str+"','a','i')");
@@ -53,6 +54,11 @@ console.log("\r\r>> " + utils.date.diff(date1,date2,"m") + " minutes with utils.
 console.log("\r\r>> " + utils.date.diff(date1,date2,"s") + " seconds with utils.date.diff(date1,date2,'s')");
 console.log("\r\r>> " + utils.date.diff(date1,date2) + " millis with utils.date.diff(date1,date2)");
 
+console.log("\r\rCurrent millis (timestamp) is " + utils.date.millis() + " with utils.date.millis()");
+var sdate = '25 Jun 2011';
+console.log("\r\rMillis (timestamp) for '"+sdate+"' is " + utils.date.millis(sdate) + " with utils.date.millis('"+sdate+"')");
+console.log("\r\rDate from millis '" + utils.date.millis(sdate) + "' is '"+ utils.date.frommillis(utils.date.millis(sdate)) + "'  with utils.date.frommillis('" + utils.date.millis(sdate) + "')");
+
 console.log("\r\r\r\n-----------------------------------------------------------------\r\n URL\r\n-----------------------------------------------------------------");
 
 console.log("\r\rwith utils.url.get('http://es.eurosport.yahoo.com/',function(data){...}) you can get the http/s response");
@@ -97,8 +103,12 @@ console.log("\r\rwith utils.cache.get(key)");
 utils.cache.get(key,function(value){
 	console.log("\r\rvalue in cache is: " + value)	
 });
-utils.cache.remove("test",function(err){
+utils.cache.remove("test");
 
+console.log("\r\n-----------------------------------------------------------------\r\n PROPERTIES (callback response could be at the end of console output)\r\n-----------------------------------------------------------------");
 
+utils.props.load(__dirname+"/sample-properties.txt", function(props){
+	console.log("\r\rProperties loaded: " + JSON.stringify(props));
 })
-console.log("\r\n-----------------------------------------------------------------")
+
+

@@ -1,0 +1,5 @@
+property1=test property 1
+property2=test property 2
+property3=test property 3
+news-property-1346326841497=testing new property
+news-property-1346326849573=testing new property

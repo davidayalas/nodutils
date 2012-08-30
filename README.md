@@ -12,7 +12,7 @@ String
 
 -	utils.string.**rtrim**(str) or String.**trim**()
 
--	utils.string.**dropAccents**(str) or String.**dropAccents**()
+-	utils.string.**dropDiacritics**(str) or String.**dropDiacritics**()
 
 -	utils.string.**isNumber**(str) or String.**isNumber**()
 
@@ -51,7 +51,16 @@ Date
 
 -	utils.date.**diff**(date1,date2,unit) 
 
-	+	Unit = "d": days,"h": hours,"m": minutes,"s": seconds. Default unit is millis
+	+	Unit = "d": days,"h": hours,"m": minutes,"s": seconds. Default unit is millis<br />  
+
+-	utils.date.**millis**(date) 
+
+	+	Returns a timestamp in millis from current date or date passed as param (string or date object)<br />  
+
+-	utils.date.**frommillis**(millis) 
+
+	+	Returns a date object from millis passed as parameter
+
 
 File
 -----
@@ -123,6 +132,23 @@ Cache
 -	utils.cache.**get**(key, callback)
 
 -	utils.cache.**remove**(key, callback)
+
+
+Properties
+----------
+
+- utils.props.**load**(path_to_file, callback)
+	
+	+ Format of the properties file is 
+
+				key1=value1
+				key2=value2
+				key3=value3
+				key4=123456789
+
+- utils.props.**save**(path_to_file, properties, callback)
+	
+	+ properties param is a json object. You can save properties dynamically
 
 
 SAMPLES
