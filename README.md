@@ -14,13 +14,17 @@ String
 
 -	utils.string.**dropDiacritics**(str) or String.**dropDiacritics**()
 
+	+	Converts accents, diacritics into a plain letter.<br /> 
+
 -	utils.string.**isNumber**(str) or String.**isNumber**()
 
 -	utils.string.**stripHtml**(str) or String.**stripHtml**()
 
+	+	Strip all html tags and leaves only text<br /> 
+
 -	utils.string.**count**(str,substr,flags) or String.**count**(substr,flags). 
 
-	+	It counts the number of ocurrences of substr. Flags can be "i" (ignore case) and/or "d" (drop accents)<br />                                                                              
+	+	It counts the number of ocurrences of substr. Flags can be "i" (ignore case) and/or "d" (drop accents)<br />                                                                                
 -	utils.string.**reverse**(str) or String.**reverse**()
 
 -	utils.string.**toHtml**(str) or String.**toHtml**() 
