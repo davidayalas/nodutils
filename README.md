@@ -138,6 +138,8 @@ Properties
 ----------
 
 - utils.props.**load**(path_to_file, callback)
+
+	+ properties in the file are loaded into a JSON object passed in callback
 	
 	+ Format of the properties file is 
 
