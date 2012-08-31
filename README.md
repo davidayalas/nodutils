@@ -22,7 +22,7 @@ String
 
 	+	Strip all html tags and leaves only text<br />  
 
--	utils.string.**count**(str,substr,flags) or String.**count**(substr,flags). 
+-	utils.string.**count**(str,substr[,flags]) or String.**count**(substr[,flags]). 
 
 	+	It counts the number of ocurrences of substr. Flags can be "i" (ignore case) and/or "d" (drop accents)<br />                                                                                  
 -	utils.string.**reverse**(str) or String.**reverse**()
@@ -97,7 +97,7 @@ File
 
 	+	options = "w" write or "a" append<br />  
 
--	utils.file.**read**(file[,encoding][,callback]) 
+-	utils.file.**read**(file[,encoding],callback) 
 
 -	utils.file.**exists**(file,callback) 
 
