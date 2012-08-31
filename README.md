@@ -15,7 +15,7 @@ String
 -	utils.string.**dropDiacritics**(str) or String.**dropDiacritics**()
 
 	+	Converts accents, diacritics into a plain letter<br />  
-	
+
 -	utils.string.**isNumber**(str) or String.**isNumber**()
 
 -	utils.string.**stripHtml**(str) or String.**stripHtml**()
@@ -49,6 +49,28 @@ Numeric
 -	utils.number.**round**(num,decimals) or Number.**round**(decimals)
 
 	+	Rounds number to the given number of decimals
+
+Array
+------
+
+- utils.array.**max**(array) or Array.**max**()
+
+	+	Returns the max value in an array of numbers
+
+- utils.array.**min**(array) or Array.**min**()
+
+	+	Returns the min value in an array of numbers
+
+- utils.array.**uniques**(array) or Array.**uniques**()
+
+	+	Returns an array of uniques values in the original array
+
+- utils.array.**aggregate**(array) or Array.**aggregate**()
+
+	+	Returns an array of uniques values and counts its occurrences, sorted descending
+
+				//returned array
+				[['itemX',15],['itemY',12],....]
 
 Date
 -----
@@ -89,31 +111,43 @@ File
 
 URL
 ----
+				//get sample
+				utils.url.get("www.bbc.com",function(html){
+					console.log(html);
+				});			
 
+				//post sample
+				utils.url.post('httpbin.org/post',{post_data:{data:'lorem ipsum dolor sit amet'}}, 
+					function(resp){
+						console.log(resp);
+					}
+				);
+				
 -	utils.url.**get**(url, options, callback) 
 
 -	utils.url.**post**(url, options, callback) 
 
-	*	Support for **http** and **https**
-	*	Support for **proxy requests** (in url. E.g: "url"=http://www.proxy.com:8080/www.urltobeproxied.com)
-	*	It is possible to set only url or options, but options need to set host, path, ...
-	*	Options is an object with some props:
+	+	Support for **http** and **https**
+	+	Support for **proxy requests** (in url. E.g: "url"=http://www.proxy.com:8080/www.urltobeproxied.com)
+	+	It is possible to set only url or options, but options need to set host, path, ...
+	+	Options is an object with some props:
 
-		+	"encoding" default is "utf-8"
-		+	"post_data" (for post()) is an object 
+		*	"encoding" default is "utf-8"
+		*	"post_data" (for post()) is an object 
 
 			with the vars (post_data:{a:1,b:2})  
 
 			or with the body in "data" key (post_data:{data:"whatever"})  
 
-		+	"headers" (object)
-		+	"auth" (string)
-		+	"forceparse": if the url is with proxy data is better to set to true
+		*	"headers" (object)
+		*	"auth" (string)
+		*	"forceparse": if the url is with proxy data is better to set to true
 
 Cache
 ------
 
--	utils.cache.**getPath**() 
+
+-	utils.cache.**getPath**()  
 
 	+	Get the current cache dir (default is "./cache")<br />  
 
@@ -160,7 +194,7 @@ Properties
 SAMPLES
 --------
 
--	Caching twitter request due to twitter api limits 
+-	Caching twitter request due to twitter api limits (it uses **url** and **cache** functions)
 
 		var utils = require("./node-utils");
 		var twitterquery = "davidayalas";
@@ -176,3 +210,13 @@ SAMPLES
 				console.log(content);
 			}
 		});
+
+
+- Easy "tagcloud" from url content (it uses **url**, **string** and **array** functions)
+
+		utils.url.get("www.bbc.com",function(content){
+			var topwords = content.stripHtml().split(" ").aggregate().filter(function(i){
+				return i[0].length<=3 || i[0].indexOf("&")>-1?false:true;
+			}).slice(0,50);
+			console.log(topwords)
+		});  
