@@ -148,7 +148,6 @@ Url
 Cache 
 ------
 
-
 -	utils.cache.**getPath**()  
 
 	+	Get the current cache dir (default is "./cache")<br />  
@@ -197,7 +196,7 @@ Properties
 Samples
 --------
 
--	<a id="sample1"> </a>Caching twitter request due to twitter api limits (it uses **url** and **cache** utilities)
+-	<a id="sample1">Caching twitter request</a> due to twitter api limits (it uses **url** and **cache** utilities)
 
 		var utils = require("./node-utils");
 		var twitterquery = "davidayalas";
@@ -215,7 +214,7 @@ Samples
 		});
 
 
-- <a id="sample2"> </a>Easy "tagcloud" from url content (it uses **url**, **string** and **array** utilities)
+- <a id="sample2">Easy "tagcloud"</a> from url content (it uses **url**, **string** and **array** utilities)
 
 		utils.url.get("www.bbc.com",function(content){
 			var topwords = content.stripHtml().split(" ").aggregate().filter(function(i){
