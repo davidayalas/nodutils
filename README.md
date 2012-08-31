@@ -42,11 +42,11 @@ Numeric
 
 	+	Converts to integer<br />  
 
--	utils.number.**stof**(str,decimals) or String.**stof**(decimals)
+-	utils.number.**stof**(str[,decimals]) or String.**stof**([decimals])
 
 	+	Converts to float, with number of decimals<br />  
 
--	utils.number.**round**(num,decimals) or Number.**round**(decimals)
+-	utils.number.**round**(num[,decimals]) or Number.**round**([decimals])
 
 	+	Rounds number to the given number of decimals
 
@@ -77,11 +77,11 @@ Array
 Date
 -----
 
--	utils.date.**diff**(date1,date2,unit) 
+-	utils.date.**diff**(date1,date2[,unit]) 
 
 	+	Unit = "d": days,"h": hours,"m": minutes,"s": seconds. Default unit is millis<br />  
 
--	utils.date.**millis**(date) 
+-	utils.date.**millis**([date]) 
 
 	+	Returns a timestamp in millis from current date or date passed as param (string or date object)<br />  
 
@@ -93,13 +93,11 @@ Date
 File
 -----
 
--	utils.file.**write**(file,data,options,callback) 
+-	utils.file.**write**(file,data[,options],callback) 
 
 	+	options = "w" write or "a" append<br />  
 
--	utils.file.**read**(file,encoding,callback) 
-
-	+	encoding is optional<br />  
+-	utils.file.**read**(file[,encoding][,callback]) 
 
 -	utils.file.**exists**(file,callback) 
 
@@ -109,7 +107,7 @@ File
 
 -	utils.file.**remove**(file,callback)
 
--	utils.file.**createpath**(path, callback)
+-	utils.file.**createpath**(path,callback)
 
 Url
 ----
@@ -125,9 +123,9 @@ Url
 					}
 				);
 				
--	utils.url.**get**(url, options, callback) 
+-	utils.url.**get**(url[,options],callback) 
 
--	utils.url.**post**(url, options, callback) 
+-	utils.url.**post**(url[,options],callback) 
 
 	+	Support for **http** and **https**
 	+	Support for **proxy requests** (in url. E.g: "url"=http://www.proxy.com:8080/www.urltobeproxied.com)
@@ -158,26 +156,26 @@ Cache
 	
 	+	It's recommended to use absolute paths ("/apps/myapp/cache")<br />  
 
--	utils.cache.**setOptions**({path : "/mypath", size : 1}}, callback)
+-	utils.cache.**setOptions**({path : "/mypath", size : 1}},callback)
 
 	+	Set the cache dir (and create if it doesn't exists) and cache max size
 	
 	+	Cache size is in MB<br />  
 
--	utils.cache.**set**(key, data, expiretime, callback) 
+-	utils.cache.**set**(key,data[,expiretime],callback) 
 
-	+	Expiretime is in seconds. It is optional<br />  
+	+	Expiretime is in seconds. If not informed, then unlimited <br />  
 
--	utils.cache.**get**(key, callback)
+-	utils.cache.**get**(key,callback)
 
--	utils.cache.**remove**(key, callback)
+-	utils.cache.**remove**(key,callback)
 
 [(sample code)](#sample1)
 
 Properties
 -----------
 
-- utils.props.**load**(path_to_file, callback)
+- utils.props.**load**(path_to_file,callback)
 
 	+ properties in the file are loaded into a JSON object passed in callback
 	
@@ -188,7 +186,7 @@ Properties
 				key3=value3
 				key4=123456789
 
-- utils.props.**save**(path_to_file, properties, callback)
+- utils.props.**save**(path_to_file,properties,callback)
 	
 	+ properties param is a json object. You can save properties dynamically
 
@@ -217,7 +215,7 @@ Samples
 - <a id="sample2" name="sample2"> </a>Easy "tagcloud" from url content (it uses **url**, **string** and **array** utilities)
 
 		var utils = require("./node-utils");
-		
+
 		utils.url.get("www.bbc.com",function(content){
 			var topwords = content.stripHtml().split(" ").aggregate().filter(function(i){
 				return i[0].length<=3 || i[0].indexOf("&")>-1?false:true;
