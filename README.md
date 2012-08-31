@@ -216,6 +216,8 @@ Samples
 
 - <a id="sample2" name="sample2"> </a>Easy "tagcloud" from url content (it uses **url**, **string** and **array** utilities)
 
+		var utils = require("./node-utils");
+		
 		utils.url.get("www.bbc.com",function(content){
 			var topwords = content.stripHtml().split(" ").aggregate().filter(function(i){
 				return i[0].length<=3 || i[0].indexOf("&")>-1?false:true;
