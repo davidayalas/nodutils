@@ -194,7 +194,7 @@ Properties
 SAMPLES
 --------
 
--	Caching twitter request due to twitter api limits (it uses **url** and **cache** functions)
+-	Caching twitter request due to twitter api limits (it uses **url** and **cache** utilities)
 
 		var utils = require("./node-utils");
 		var twitterquery = "davidayalas";
@@ -212,7 +212,7 @@ SAMPLES
 		});
 
 
-- Easy "tagcloud" from url content (it uses **url**, **string** and **array** functions)
+- Easy "tagcloud" from url content (it uses **url**, **string** and **array** utilities)
 
 		utils.url.get("www.bbc.com",function(content){
 			var topwords = content.stripHtml().split(" ").aggregate().filter(function(i){
