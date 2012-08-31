@@ -67,10 +67,12 @@ Array
 
 - utils.array.**aggregate**(array) or Array.**aggregate**()
 
-	+	Returns an array of uniques values and counts its occurrences, sorted descending
+	+	Returns an array of uniques values and counts its occurrences, sorted descending [(sample code)](#sample2)
 
 				//returned array
 				[['itemX',15],['itemY',12],....]
+
+				
 
 Date
 -----
@@ -109,7 +111,7 @@ File
 
 -	utils.file.**createpath**(path, callback)
 
-URL
+Url
 ----
 				//get sample
 				utils.url.get("www.bbc.com",function(html){
@@ -143,7 +145,7 @@ URL
 		*	"auth" (string)
 		*	"forceparse": if the url is with proxy data is better to set to true
 
-Cache
+Cache 
 ------
 
 
@@ -171,9 +173,10 @@ Cache
 
 -	utils.cache.**remove**(key, callback)
 
+[(sample code)](#sample2)
 
 Properties
-----------
+-----------
 
 - utils.props.**load**(path_to_file, callback)
 
@@ -191,7 +194,7 @@ Properties
 	+ properties param is a json object. You can save properties dynamically
 
 
-SAMPLES
+Samples
 --------
 
 -	Caching twitter request due to twitter api limits (it uses **url** and **cache** utilities)
@@ -212,7 +215,7 @@ SAMPLES
 		});
 
 
-- Easy "tagcloud" from url content (it uses **url**, **string** and **array** utilities)
+- <a id="sample2"> </a>Easy "tagcloud" from url content (it uses **url**, **string** and **array** utilities)
 
 		utils.url.get("www.bbc.com",function(content){
 			var topwords = content.stripHtml().split(" ").aggregate().filter(function(i){
