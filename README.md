@@ -55,15 +55,15 @@ Array
 
 - utils.array.**max**(array) or Array.**max**()
 
-	+	Returns the max value in an array of numbers
+	+	Returns the max value in an array of numbers<br />  
 
 - utils.array.**min**(array) or Array.**min**()
 
-	+	Returns the min value in an array of numbers
+	+	Returns the min value in an array of numbers<br />  
 
 - utils.array.**uniques**(array) or Array.**uniques**()
 
-	+	Returns an array of uniques values in the original array
+	+	Returns an array of uniques values in the original array<br />  
 
 - utils.array.**aggregate**(array) or Array.**aggregate**()
 
