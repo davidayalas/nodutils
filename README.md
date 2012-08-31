@@ -173,7 +173,7 @@ Cache
 
 -	utils.cache.**remove**(key, callback)
 
-[(sample code)](#sample2)
+[(sample code)](#sample1)
 
 Properties
 -----------
@@ -197,7 +197,7 @@ Properties
 Samples
 --------
 
--	Caching twitter request due to twitter api limits (it uses **url** and **cache** utilities)
+-	<a id="sample1"> </a>Caching twitter request due to twitter api limits (it uses **url** and **cache** utilities)
 
 		var utils = require("./node-utils");
 		var twitterquery = "davidayalas";
