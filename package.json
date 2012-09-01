@@ -4,7 +4,7 @@
   "description": "Node utilities to manage common operations over: string, numeric, array, date, file, url, cache, properties files",
   "version": "0.4",
   "repository": {
-    "url": "https://github.com/davidayalas/node-utils/"
+    "url": "https://github.com/davidayalas/nodutils/"
   },
   "main": "./index.js",
   "bin": {},
