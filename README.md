@@ -1,7 +1,15 @@
 Utilities for NodeJS
 ====================
 
-var utils = require("./node-utils");
+Installation
+-------------
+
+npm install nodutils
+
+Usage
+------
+
+var utils = require("nodutils");
 
 String
 -------
@@ -196,7 +204,7 @@ Samples
 
 -	<a id="sample1" name="sample1"> </a>Caching twitter request due to twitter api limits (it uses **url** and **cache** utilities)
 
-		var utils = require("./node-utils");
+		var utils = require("nodutils");
 		var twitterquery = "davidayalas";
 		var twitterurl = "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=";
 
@@ -214,7 +222,7 @@ Samples
 
 - <a id="sample2" name="sample2"> </a>Easy "tagcloud" from url content (it uses **url**, **string** and **array** utilities)
 
-		var utils = require("./node-utils");
+		var utils = require("nodutils");
 
 		utils.url.get("www.bbc.com",function(content){
 			var topwords = content.stripHtml().split(" ").aggregate().filter(function(i){
