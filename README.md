@@ -12,6 +12,14 @@ String
 
 -	utils.string.**rtrim**(str) or String.**trim**()
 
+-	utils.string.**toi**(str) or String.**toi**()
+
+	+	Converts to integer<br />  
+
+-	utils.string.**tof**(str[,decimals]) or String.**tof**([decimals])
+
+	+	Converts to float, with number of decimals<br />  
+
 -	utils.string.**dropDiacritics**(str) or String.**dropDiacritics**()
 
 	+	Converts accents, diacritics into a plain letter<br />  
@@ -37,14 +45,6 @@ String
 
 Numeric
 --------
-
--	utils.number.**stoi**(str) or String.**stoi**()
-
-	+	Converts to integer<br />  
-
--	utils.number.**stof**(str[,decimals]) or String.**stof**([decimals])
-
-	+	Converts to float, with number of decimals<br />  
 
 -	utils.number.**round**(num[,decimals]) or Number.**round**([decimals])
 

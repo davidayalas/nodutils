@@ -23,13 +23,14 @@ str = '<!doctype html><html lang="en"><head>    <meta charset="utf-8" />    <tit
 console.log("\r\rhtml '" + str + "'");
 console.log("\r\r>>is \"" + utils.string.stripHtml(str) + "\" with utils.string.stripHtml()");
 
-console.log("\r\r\r\n-----------------------------------------------------------------\r\n NUMBER \r\n-----------------------------------------------------------------");
-
 str = "    1234.5678    "
 console.log("string number '" + str + "'");
 
-console.log("\r\r>> is '" + utils.number.stoi(str) + "' with utils.number.stoi('" + str + "')");
-console.log("\r\r>> is '" + utils.number.stof(str,2)+ "' with utils.number.stof('" + str + "',2)");
+console.log("\r\r>> is '" + utils.string.toi(str) + "' with utils.string.toi('" + str + "')");
+console.log("\r\r>> is '" + utils.string.tof(str,2)+ "' with utils.string.tof('" + str + "',2)");
+
+
+console.log("\r\r\r\n-----------------------------------------------------------------\r\n NUMBER \r\n-----------------------------------------------------------------");
 
 str = 123.45678
 console.log("\r\r\r\nnumber " + str);
