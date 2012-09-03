@@ -38,7 +38,7 @@ String
 
 	+	Strip all html tags and leaves only text<br />  
 
--	utils.string.**count**(str,substr[,flags]) or String.**count**(substr[,flags]). 
+-	utils.string.**contains**(str,substr[,flags]) or String.**contains**(substr[,flags]). 
 
 	+	It counts the number of ocurrences of substr. Flags can be "i" (ignore case) and/or "d" (drop accents)<br />                                                                                  
 -	utils.string.**reverse**(str) or String.**reverse**()
@@ -80,6 +80,11 @@ Array
 				//returned array
 				[['itemX',15],['itemY',12],....]
 
+- utils.array.**contains**(array,value[,flags]) or Array.**contains**(value[,flags])
+
+	+	Returns the number of occurrences of "value"
+
+	+	Flags can be "i" (ignore case) and/or "d" (drop accents)<br />
 				
 
 Date

@@ -28,7 +28,7 @@ console.log("string number '" + str + "'");
 
 console.log("\r\r>> is '" + utils.string.toi(str) + "' with utils.string.toi('" + str + "')");
 console.log("\r\r>> is '" + utils.string.tof(str,2)+ "' with utils.string.tof('" + str + "',2)");
-
+return
 
 console.log("\r\r\r\n-----------------------------------------------------------------\r\n NUMBER \r\n-----------------------------------------------------------------");
 
