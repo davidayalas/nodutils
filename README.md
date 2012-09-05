@@ -209,11 +209,13 @@ Geo
 
 Utilities for basic geocoding and checking distance between points. Limited to Google and Yahoo API limits, but you could geocode 50.000 addresses/points for Yahoo and 2.500 for Google. Utils.geo will use one or other depending of availability of the service. [(sample code)](#sample3)
 
-- utils.geo.getDistance(point1,point2[,earthRadius])
+- utils.geo.**getDistance**(point1,point2[,earthRadius])
 
-	+ Calculates the distance between point1 and point2. Points are arrays: [latitude,longitude] <br />  
+	+ Calculates the distance between point1 and point2. Points are arrays: [latitude,longitude]
 
-- utils.geo.isInside(point,center,radius[,earthRadius])
+	+ earthRadius default is 6371 km. <br />  
+
+- utils.geo.**isInside**(point,center,radius[,earthRadius])
 	
 	+ Checks if a point (array of two positions [latitude,longitude]) is inside a circle (center + radius). Center is an array of two positions.
 
@@ -221,26 +223,26 @@ Utilities for basic geocoding and checking distance between points. Limited to G
 
 	+ earthRadius default is 6371 km. <br />  
 
-- utils.geo.geocode(address,callback)
+- utils.geo.**geocode**(address,callback)
 
 	+ Returns an array of two positions [latitude,longitude] for the given address. <br />  
 
-- utils.geo.rgeocode(latitude,longitude,callback)
+- utils.geo.**rgeocode**(latitude,longitude,callback)
 
 	+ Reverse geocode. Returns an object for the given latitude and longitude. <br />  
 
 Both, geocode and rgeocode return the same object	
 
 				{ 
-				  number : 'xxxxxxxxxxxx',
-				  street: 'xxxxxxxxxxxx',
-				  postal: 'xxxxxxxxxxxx',
-				  city: 'xxxxxxxxxxxx',
-				  county: 'xxxxxxxxxxxx',
-				  state: 'xxxxxxxxxxxx',
-				  country: 'xxxxxxxxxxxx',
-				  lat: 1.11,
-				  lon: 2.22 
+					number : 'xxxxxxxxxxxx',
+					street: 'xxxxxxxxxxxx',
+					postal: 'xxxxxxxxxxxx',
+					city: 'xxxxxxxxxxxx',
+					county: 'xxxxxxxxxxxx',
+					state: 'xxxxxxxxxxxx',
+					country: 'xxxxxxxxxxxx',
+					lat: 1.11,
+					lon: 2.22 
 				}
 
 
@@ -276,7 +278,7 @@ Samples
 					console.log(topwords)
 				});  
 
-- <a id="sample3" name="sample3"> </a>Calculates distance between two unestructured addresses (it uses **geo**)
+- <a id="sample3" name="sample3"> </a>Calculate the distance between two unestructured addresses (it uses **geo**)
 
 				var utils = require("nodutils");
 
