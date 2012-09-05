@@ -204,7 +204,7 @@ Properties
 	+ properties param is a json object. You can save properties dynamically
 
 
-GEO
+Geo
 ----
 
 Utilities for basic geocoding and checking distance between points. Limited to Google and Yahoo API limits, but you could geocode 50.000 addresses/points for Yahoo and 2.500 for Google. Utils.geo will use one or other depending of availability of the service. [(sample code)](#sample3)
