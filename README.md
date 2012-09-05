@@ -211,7 +211,7 @@ Utilities for basic geocoding and checking distance between points. Limited to G
 
 - utils.geo.getDistance(point1,point2[,earthRadius])
 
-	+ Calculates the distance between point1 and point2. Points are arrays: [latitude,longitude]
+	+ Calculates the distance between point1 and point2. Points are arrays: [latitude,longitude] <br />  
 
 - utils.geo.isInside(point,center,radius[,earthRadius])
 	
@@ -219,15 +219,15 @@ Utilities for basic geocoding and checking distance between points. Limited to G
 
 	+ radius is in KM
 
-	+ earthRadius default is 6371 km.
+	+ earthRadius default is 6371 km. <br />  
 
 - utils.geo.geocode(address,callback)
 
-	+ Returns an array of two positions [latitude,longitude] for the given address.
+	+ Returns an array of two positions [latitude,longitude] for the given address. <br />  
 
 - utils.geo.rgeocode(latitude,longitude,callback)
 
-	+ Reverse geocode. Returns an object for the given latitude and longitude.
+	+ Reverse geocode. Returns an object for the given latitude and longitude. <br />  
 
 Both, geocode and rgeocode return the same object	
 
