@@ -4,12 +4,12 @@ Utilities for NodeJS
 Installation
 -------------
 
-npm install nodutils
+				npm install nodutils
 
 Usage
 ------
 
-var utils = require("nodutils");
+				var utils = require("nodutils");
 
 String
 -------
@@ -51,7 +51,7 @@ String
 
 	+	Converts into diacritics html encoded entities
 
-Numeric
+Number
 --------
 
 -	utils.number.**round**(num[,decimals]) or Number.**round**([decimals])
@@ -204,34 +204,85 @@ Properties
 	+ properties param is a json object. You can save properties dynamically
 
 
+GEO
+----
+
+Utilities for basic geocoding and checking distance between points. Limited to Google and Yahoo API limits, but you could geocode 50.000 addresses/points for Yahoo and 2.500 for Google. Utils.geo will use one or other depending of availability of the service. [(sample code)](#sample3)
+
+- utils.geo.getDistance(point1,point2[,earthRadius])
+
+	+ Calculates the distance between point1 and point2. Points are arrays: [latitude,longitude]
+
+- utils.geo.isInside(point,center,radius[,earthRadius])
+	
+	+ Checks if a point (array of two positions [latitude,longitude]) is inside a circle (center + radius). Center is an array of two positions.
+
+	+ radius is in KM
+
+	+ earthRadius default is 6371 km.
+
+- utils.geo.geocode(address,callback)
+
+	+ Returns an array of two positions [latitude,longitude] for the given address.
+
+- utils.geo.rgeocode(latitude,longitude,callback)
+
+	+ Reverse geocode. Returns an object for the given latitude and longitude.
+
+Both, geocode and rgeocode return the same object	
+
+				{ 
+				  number : 'xxxxxxxxxxxx',
+				  street: 'xxxxxxxxxxxx',
+				  postal: 'xxxxxxxxxxxx',
+				  city: 'xxxxxxxxxxxx',
+				  county: 'xxxxxxxxxxxx',
+				  state: 'xxxxxxxxxxxx',
+				  country: 'xxxxxxxxxxxx',
+				  lat: 1.11,
+				  lon: 2.22 
+				}
+
+
 Samples
 --------
 
 -	<a id="sample1" name="sample1"> </a>Caching twitter request due to twitter api limits (it uses **url** and **cache** utilities)
 
-		var utils = require("nodutils");
-		var twitterquery = "davidayalas";
-		var twitterurl = "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=";
+				var utils = require("nodutils");
+				var twitterquery = "davidayalas";
+				var twitterurl = "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=";
 
-		utils.cache.get(twitterquery, function(content){
-			if(!content){
-				utils.url.get(twitterurl+twitterquery,function(result){
-					utils.cache.set(twitterquery,result,300);
-					console.log(result);
+				utils.cache.get(twitterquery, function(content){
+					if(!content){
+						utils.url.get(twitterurl+twitterquery,function(result){
+							utils.cache.set(twitterquery,result,300);
+							console.log(result);
+						});
+					}else{
+						console.log(content);
+					}
 				});
-			}else{
-				console.log(content);
-			}
-		});
 
 
 - <a id="sample2" name="sample2"> </a>Easy "tagcloud" from url content (it uses **url**, **string** and **array** utilities)
 
-		var utils = require("nodutils");
+				var utils = require("nodutils");
 
-		utils.url.get("www.bbc.com",function(content){
-			var topwords = content.stripHtml().split(" ").aggregate().filter(function(i){
-				return i[0].length<=3 || i[0].indexOf("&")>-1?false:true;
-			}).slice(0,50);
-			console.log(topwords)
-		});  
+				utils.url.get("www.bbc.com",function(content){
+					var topwords = content.stripHtml().split(" ").aggregate().filter(function(i){
+						return i[0].length<=3 || i[0].indexOf("&")>-1?false:true;
+					}).slice(0,50);
+					console.log(topwords)
+				});  
+
+- <a id="sample3" name="sample3"> </a>Calculates distance between two unestructured addresses (it uses **geo**)
+
+				var utils = require("nodutils");
+
+				utils.geo.geocode("madrid,spain", function(p1){
+					utils.geo.geocode("barcelona,spain", function(p2){
+						console.log("distance between Madrid and Barcelona is: ");
+						console.log(utils.geo.getDistance([p1.lat, p1.lon],[p2.lat, p2.lon]) + " km");
+					});
+				});
