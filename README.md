@@ -82,7 +82,7 @@ Array
 
 - utils.array.**contains**(array,value[,flags]) or Array.**contains**(value[,flags])
 
-	+	Returns the number of occurrences of "value"
+	+	Returns true or false
 
 	+	Flags can be "i" (ignore case) and/or "d" (drop accents)<br />
 				
@@ -156,6 +156,11 @@ Url
 		*	"auth" (string)
 		*	"forceparse": if the url is with proxy data is better to set to true
 
+	+ callback function will receive next parameters:
+		* content
+		* statuscode
+		* headers
+
 Cache 
 ------
 
@@ -213,6 +218,8 @@ Utilities for basic geocoding and checking distance between points. Limited to G
 
 	+ Calculates the distance between point1 and point2. Points are arrays: [latitude,longitude]
 
+	+ Distance is in km.
+
 	+ earthRadius default is 6371 km. <br />  
 
 - utils.geo.**isInside**(point,center,radius[,earthRadius])
@@ -223,11 +230,11 @@ Utilities for basic geocoding and checking distance between points. Limited to G
 
 	+ earthRadius default is 6371 km. <br />  
 
-- utils.geo.**geocode**(address,callback)
+- utils.geo.**geocode**(address,options,callback)
 
 	+ Returns an array of two positions [latitude,longitude] for the given address. <br />  
 
-- utils.geo.**rgeocode**(latitude,longitude,callback)
+- utils.geo.**rgeocode**(latitude,longitude,options,callback)
 
 	+ Reverse geocode. Returns an object for the given latitude and longitude. <br />  
 
@@ -245,6 +252,7 @@ Both, geocode and rgeocode return the same object
 					lon: 2.22 
 				}
 
+You can set the locale in the options object {"locale" : "en_GB"}
 
 Samples
 --------

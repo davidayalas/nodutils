@@ -1,32 +1,21 @@
-var utils = require("../index.js");
+var utils = require('../index.js');
 
-//GET 
-
-var http = "http://www.google.com";
-var https = "https://www.google.com";
-var httpproxied = "http://218.247.129.3/http://www.google.com"
-
-utils.url.get(http,function(result){
-	console.log("http get > " + result.slice(0,200)+"[...]\n\r");
-});
-
-utils.url.get(https,function(result){
-	console.log("httpS get > " + result.slice(0,200)+"[...]\n\r");
-});
-
-utils.url.get(httpproxied,function(result){
-	console.log("httpProxied get > " + result.slice(0,200)+"[...]\n\r");
-});
-
-//POST
-var httppost = "http://httpbin.org/post"
-var httpSpost = "https://httpbin.org/post"
-
-utils.url.post(httppost,{post_data : {a:1,b:22,c:333}},function(result){
-	console.log("http post  > " + result + "\n\r");
-	utils.url.post(httpSpost,{post_data : {a:1,b:22,c:333}},function(result){
-		console.log("httpS post  > " + result + "\n\r");
-	});
-});
-
-
+module.exports = {
+  get: function(test){
+      utils.url.get("www.bbc.com",function(content,status,headers){
+        test.expect(3);
+        test.equals(typeof headers,"object");
+        test.equals(status,200);
+        test.equals(content.length>0,true);
+        test.done();
+      });
+  },
+  post: function(test){
+      utils.url.post("http://httpbin.org/post",{post_data : {a:1,b:22,c:333}},function(content,status,headers){
+        test.equals(typeof JSON.parse(content),"object");
+        test.equals(status,200);
+        test.equals(JSON.parse(content).data,"a=1&b=22&c=333");
+        test.done();
+      });
+  }
+}
