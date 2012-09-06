@@ -3,7 +3,7 @@
   "name": "nodutils",
   "description": "Node utilities to manage common operations over: string, numeric, array, date, file, url, cache, properties files, geocoding",
   "keywords" : ["utilities","cache","caching","properties","url","file","string","number","array","date","geo","geocoding","reverse geocoding"],
-  "version": "0.1.2",
+  "version": "0.1.3",
   "repository": {
     "url": "https://github.com/davidayalas/nodutils/",
     "type" : "git"
