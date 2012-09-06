@@ -2,3 +2,9 @@
 *temp
 *cache
 *old*
+/lib/cache
+/test/cache
+/lib/temp
+/lib/tmp
+/test/temp
+/test/tmp
