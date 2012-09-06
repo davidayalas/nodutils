@@ -106,17 +106,17 @@ Date
 File
 -----
 
--	utils.file.**write**(file,data[,options],callback) 
+-	utils.file.**write**(file,data[,options],function(err){}) 
 
 	+	options = "w" write or "a" append<br />  
 
--	utils.file.**read**(file[,encoding],callback)
+-	utils.file.**read**(file[,encoding],function(err,data){})
 	
-	+ callback will receive "err" and "data" params (callback(err,data))<br /> 
+-	utils.file.**exists**(file,function(exists){}) 
 
--	utils.file.**exists**(file,callback) 
+	+ exists: true or false
 
--	utils.file.**getModTime**(file,callback)
+-	utils.file.**getModTime**(file,function(date){})
 
 	+	Date object is given to the callback as an argument<br />  
 
@@ -138,9 +138,9 @@ Url
 					}
 				);
 				
--	utils.url.**get**(url[,options],callback) 
+-	utils.url.**get**(url[,options],function(content,statuscode,headers){}) 
 
--	utils.url.**post**(url[,options],callback) 
+-	utils.url.**post**(url[,options],function(content,statuscode,headers){}) 
 
 	+	Support for **http** and **https**
 	+	Support for **proxy requests** (in url. E.g: "url"=http://www.proxy.com:8080/www.urltobeproxied.com)
@@ -157,11 +157,6 @@ Url
 		*	"headers" (object)
 		*	"auth" (string)
 		*	"forceparse": if the url is with proxy data is better to set to true
-
-	+ callback function will receive:
-		* content (string)
-		* statuscode (number)
-		* headers (object)
 
 Cache 
 ------
@@ -186,7 +181,7 @@ Cache
 
 	+	Expiretime is in seconds. If not informed, then unlimited <br />  
 
--	utils.cache.**get**(key,callback)
+-	utils.cache.**get**(key,function(value){})
 
 -	utils.cache.**remove**(key,callback)
 
@@ -195,7 +190,7 @@ Cache
 Properties
 -----------
 
-- utils.props.**load**(path_to_file,callback)
+- utils.props.**load**(path_to_file,function(props){})
 
 	+ properties in the file are loaded into a JSON object passed in callback
 	
