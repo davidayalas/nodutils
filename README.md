@@ -110,7 +110,9 @@ File
 
 	+	options = "w" write or "a" append<br />  
 
--	utils.file.**read**(file[,encoding],callback) 
+-	utils.file.**read**(file[,encoding],callback)
+	
+	+ callback will receive "err" and "data" params (callback(err,data))<br /> 
 
 -	utils.file.**exists**(file,callback) 
 
@@ -156,10 +158,10 @@ Url
 		*	"auth" (string)
 		*	"forceparse": if the url is with proxy data is better to set to true
 
-	+ callback function will receive next parameters:
-		* content
-		* statuscode
-		* headers
+	+ callback function will receive:
+		* content (string)
+		* statuscode (number)
+		* headers (object)
 
 Cache 
 ------
@@ -296,3 +298,5 @@ Samples
 						console.log(utils.geo.getDistance([p1.lat, p1.lon],[p2.lat, p2.lon]) + " km");
 					});
 				});
+
+- Simple http server for [caching and serve only valid twitter users](https://github.com/davidayalas/nodutils/blob/master/samples/simple-twitter-cache-server.js) (stored in properties file)
