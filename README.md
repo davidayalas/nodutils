@@ -1,6 +1,20 @@
 Utilities for NodeJS
 ====================
 
+	- [Installation](#installation)
+	- [Usage](#usage)
+	- Packages:
+		+ [String](#string)
+		+ [Number](#number)
+		+ [Array](#array)
+		+ [Date](#date)
+		+ [File](#file)
+		+ [Url](#url)
+		+ [Cache ](#cache-)
+		+ [Properties](#properties)
+		+ [Geo](#geo)
+	- [Code samples](#samples)
+
 Installation
 -------------
 
