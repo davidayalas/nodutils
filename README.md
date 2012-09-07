@@ -296,7 +296,7 @@ Samples
 
 - Simple http server for [caching and serve only valid twitter users](https://github.com/davidayalas/nodutils/blob/master/samples/simple-twitter-cache-server.js) (stored in properties file)
 
-- [Bulk geocode](https://github.com/davidayalas/nodutils/blob/master/samples/bulk-geocode.js) from url content. Tested with more than 5000 addresses.
+- [Bulk geocode](https://github.com/davidayalas/nodutils/blob/master/samples/bulk-geocode.js) from url content. Tested with more than 5000 addresses. (it uses **geo**, **url**, **string**, **file**)
 
 				var utils = require("nodutils");
 
