@@ -9,5 +9,12 @@ module.exports = {
           test.done();
         });
     });
+  },
+  revgeocode : function(test){
+    utils.geo.rgeocode(41.2,2.31,{"locale":"en_GB"},function(p1){
+    	test.equals(typeof(p1),"object");
+    	test.equals(p1.state,"Catalonia");
+    	test.done();
+    });
   }
 }
