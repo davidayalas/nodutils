@@ -295,3 +295,26 @@ Samples
 				});
 
 - Simple http server for [caching and serve only valid twitter users](https://github.com/davidayalas/nodutils/blob/master/samples/simple-twitter-cache-server.js) (stored in properties file)
+
+- [Bulk geocode](https://github.com/davidayalas/nodutils/blob/master/samples/bulk-geocode.js) from url content. Tested with more than 5000 addresses.
+
+				var utils = require("nodutils");
+
+				utils.url.get("http://w20.bcn.cat/opendata/DonaRecurs.aspx?arbre=general&recurs=TAULA_CARRERS&fitxer=1121",{"encoding":"iso-8859-1"}, function(content,code){
+					if(content){
+						content.split("\r\n").forEach(
+							function(element, index, array){
+								var add = element.slice(element.lastIndexOf(";")+1);
+								if(add){	
+									utils.geo.geocode((add.count("carrer","i")>0?add:"Carrer "+add)+",barcelona,spain", function(p){
+										if(p && typeof(p)=="object" && p.lat && p.lon){
+											console.log(element + ";" + p.lat + ";" + p.lon);
+											utils.file.write(__dirname + "/geocoded-addresses.txt", element + ";" + p.lat + ";" + p.lon + "\r\n", "a");
+										}
+									});
+								}
+							}
+						);
+					}
+				});
+
