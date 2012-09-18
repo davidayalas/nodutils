@@ -91,8 +91,11 @@ Array
 
 	+	Returns an array of uniques values and counts its occurrences, sorted descending [(sample code)](#sample2)
 
-				//returned array
-				[['itemX',15],['itemY',12],....]
+				["a","b","c","d",1,2,"a","b","c","a","b","a",1,0,1].aggregate();
+
+				returned array
+				
+				[ [ 'a', 4 ], [ '1', 3 ], [ 'b', 3 ], [ 'c', 2 ], [ '0', 1 ], [ '2', 1 ], [ 'd', 1 ] ]
 
 - utils.array.**contains**(array,value[,flags]) or Array.**contains**(value[,flags])
 
@@ -142,13 +145,17 @@ Url
 ----
 				//get sample
 				utils.url.get("www.bbc.com",function(html){
-					console.log(html);
+					if(html){
+						console.log(html);
+					}
 				});			
 
 				//post sample
 				utils.url.post('httpbin.org/post',{post_data:{data:'lorem ipsum dolor sit amet'}}, 
 					function(resp){
-						console.log(resp);
+						if(resp){
+							console.log(resp);
+						}
 					}
 				);
 				
@@ -291,10 +298,13 @@ Samples
 				var utils = require("nodutils");
 
 				utils.url.get("www.bbc.com",function(content){
-					var topwords = content.stripHtml().split(" ").aggregate().filter(function(i){
-						return i[0].length<=3 || i[0].indexOf("&")>-1?false:true;
-					}).slice(0,50);
-					console.log(topwords)
+					var topwords = [];
+					if(content){
+						var topwords = content.stripHtml().split(" ").aggregate().filter(function(i){
+							return i[0].length<=3 || i[0].indexOf("&")>-1?false:true;
+						}).slice(0,50);
+					}
+					console.log(topwords);
 				});  
 
 - <a id="sample3" name="sample3"> </a>Calculate the distance between two unestructured addresses (it uses **geo**)
@@ -304,7 +314,9 @@ Samples
 				utils.geo.geocode("madrid,spain", function(p1){
 					utils.geo.geocode("barcelona,spain", function(p2){
 						console.log("distance between Madrid and Barcelona is: ");
-						console.log(utils.geo.getDistance([p1.lat, p1.lon],[p2.lat, p2.lon]) + " km");
+						if(p1 && p2){
+							console.log(utils.geo.getDistance([p1.lat, p1.lon],[p2.lat, p2.lon]) + " km");
+						}
 					});
 				});
 
